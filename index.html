@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Snake Game — JavaScript</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main class="app">
+      <header class="hud">
+        <div class="brand">
+          <h1>SnakeJS</h1>
+          <span class="meta">Vanilla JavaScript · Canvas 2D</span>
+        </div>
+        <div class="scores">
+          <div class="score-item">
+            <span class="label">คะแนน</span>
+            <strong id="score" class="value">0</strong>
+          </div>
+          <div class="score-item">
+            <span class="label">สูงสุด</span>
+            <strong id="highScore" class="value">0</strong>
+          </div>
+          <div class="score-item">
+            <span class="label">ความยาว</span>
+            <strong id="length" class="value">3</strong>
+          </div>
+        </div>
+      </header>
+
+      <section class="toolbar" aria-label="ตั้งค่าเกม">
+        <div class="control-group">
+          <label for="speedSelect">ความเร็ว</label>
+          <select id="speedSelect">
+            <option value="140">ปกติ</option>
+            <option value="100">เร็ว</option>
+            <option value="70">เทอร์โบ</option>
+          </select>
+        </div>
+
+        <label class="toggle">
+          <input type="checkbox" id="wrapToggle" />
+          <span>ทะลุกำแพง</span>
+        </label>
+
+        <button id="muteBtn" class="btn-secondary" type="button">เสียง: เปิด</button>
+        <button id="pauseBtn" class="btn-secondary" type="button">พักเกม</button>
+      </section>
+
+      <section class="board-wrap">
+        <canvas id="gameCanvas" width="480" height="480" aria-label="กระดานเกมงูกินหาง"></canvas>
+        <div id="overlay" class="overlay">
+          <h2 id="overlayTitle">เกมส์งูกินหาง</h2>
+          <p id="overlaySubtitle">ใช้ปุ่มลูกศร หรือ W A S D เพื่อบังคับทิศทาง</p>
+          <button id="startBtn" class="btn-primary" type="button">เริ่มเล่น</button>
+        </div>
+      </section>
+
+      <section class="dpad" aria-label="ปุ่มควบคุมบนมือถือ">
+        <button class="dpad-btn up" data-dir="UP" type="button" aria-label="ขึ้น">▲</button>
+        <div class="dpad-mid">
+          <button class="dpad-btn left" data-dir="LEFT" type="button" aria-label="ซ้าย">◀</button>
+          <button class="dpad-btn down" data-dir="DOWN" type="button" aria-label="ลง">▼</button>
+          <button class="dpad-btn right" data-dir="RIGHT" type="button" aria-label="ขวา">▶</button>
+        </div>
+      </section>
+    </main>
+
+    <script src="game.js"></script>
+  </body>
+</html>
